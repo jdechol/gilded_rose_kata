@@ -1,4 +1,4 @@
-class BackstagePassesToATafkal80etcConcert < NormalItem
+class BackstagepassestoaTAFKAL80ETCconcert < NormalItem
   def update_quality
     if @sell_in >= 10
       @quality += 1

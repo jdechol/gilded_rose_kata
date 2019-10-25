@@ -1,6 +1,10 @@
 class NormalItem
   attr_reader :name, :quality, :sell_in
 
+  def self.update(item)
+    self.new(item).update
+  end
+
   def initialize(item)
     @name = item.name
     @quality = item.quality

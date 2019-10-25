@@ -1,4 +1,4 @@
-class SulfurasHandOfRagnaros < NormalItem
+class SulfurasHandofRagnaros < NormalItem
   def quality
     @quality
   end

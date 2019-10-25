@@ -6,17 +6,16 @@ require 'sulfuras'
 
 def update_quality(items)
   items.each do |item|
-    Object.const_get(class_name(item))
-      .new(item)
-      .update
+    if Object.const_defined?(class_name(item))
+      Object.const_get(class_name(item)).update(item)
+    else
+      NormalItem.update(item)
+    end
   end
 end
 
 def class_name(item)
-  item.name.tr(',', '')
-    .downcase.split(' ')
-    .collect(&:capitalize)
-    .join
+  item.name.gsub(/,|\s/, '')
 end
 
 #----------------------------
